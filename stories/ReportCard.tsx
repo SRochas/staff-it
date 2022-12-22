@@ -1,4 +1,6 @@
 import React from 'react';
+import LinearProgress from '@mui/material/LinearProgress';
+import Button from '@mui/material/Button'
 
 interface ReportCardProps {
 }
@@ -8,5 +10,5 @@ interface ReportCardProps {
  */
 export const ReportCard = ({
 }: ReportCardProps) => {
-return <div>Hello world</div>
+return <Button >Hey there</Button>
 };
