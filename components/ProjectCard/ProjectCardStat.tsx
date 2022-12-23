@@ -2,12 +2,12 @@ import LinearProgress from "@mui/material/LinearProgress";
 import type { LinearProgressProps } from "@mui/material/LinearProgress";
 import { Typography } from "@mui/material";
 
-export type ReportCardStatProps = {
+export type ProjectCardStatProps = {
   name: string;
   value?: LinearProgressProps["value"];
   color?: LinearProgressProps["color"];
 };
-const ReportCardStat = ({ name, value, color }: ReportCardStatProps) => {
+const ProjectCardStat = ({ name, value, color }: ProjectCardStatProps) => {
   return (
     <>
       <Typography variant="body1">{name}</Typography>
@@ -16,4 +16,4 @@ const ReportCardStat = ({ name, value, color }: ReportCardStatProps) => {
   );
 };
 
-export default ReportCardStat;
+export default ProjectCardStat;

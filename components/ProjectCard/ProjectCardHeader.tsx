@@ -1,13 +1,13 @@
 import Typography from "@mui/material/Typography";
 
-export type ReportCardHeaderProps = {
+export type ProjectCardHeaderProps = {
   children?: string;
 };
 
-const ReportCardHeader = ({ children }: ReportCardHeaderProps) => (
+const ProjectCardHeader = ({ children }: ProjectCardHeaderProps) => (
   <Typography gutterBottom variant="h5" component="div">
     {children}
   </Typography>
 );
 
-export default ReportCardHeader;
+export default ProjectCardHeader;

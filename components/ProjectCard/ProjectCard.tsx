@@ -3,14 +3,14 @@ import type { ReactNode } from "react";
 import Card from "@mui/material/Card";
 import { CardContent, Typography } from "@mui/material";
 
-interface ReportCardProps {
+interface ProjectCardProps {
   children?: ReactNode | ReactNode[];
 }
 
 /**
  * Primary UI component for user interaction
  */
-const ReportCard = ({ children }: ReportCardProps) => {
+const ProjectCard = ({ children }: ProjectCardProps) => {
   return (
     <Card variant="outlined" sx={{ maxWidth: 345 }}>
       <CardContent>{children}</CardContent>
@@ -18,4 +18,4 @@ const ReportCard = ({ children }: ReportCardProps) => {
   );
 };
 
-export default ReportCard;
+export default ProjectCard;
