@@ -1,10 +1,12 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { ReportCard } from "./ReportCard";
+import ReportCard from "../components/ReportCard/ReportCard";
+import Stat from "../components/ReportCard/Stat";
 import createTheme from "@mui/material/styles/createTheme";
 import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import CssBaseline from "@mui/material/CssBaseline/CssBaseline";
 import { useDarkMode } from "storybook-dark-mode";
+import Header from "../components/ReportCard/Header";
 
 const StoryWithTheme = (Story) => {
   const mode = useDarkMode() ? "dark" : "light";
@@ -32,7 +34,10 @@ export default {
 } as ComponentMeta<typeof ReportCard>;
 
 const Template: ComponentStory<typeof ReportCard> = (args) => (
-  <ReportCard {...args} />
+  <ReportCard {...args}>
+    <Header>CDF</Header>
+    <Stat name="Energy" color="error" value={25} />
+  </ReportCard>
 );
 
 export const ReportCardTemplate = Template.bind({});
