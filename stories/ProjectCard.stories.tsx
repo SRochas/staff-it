@@ -36,11 +36,11 @@ export default {
 const Template: ComponentStory<typeof ProjectCard> = (args) => (
   <ProjectCard {...args} sx={{ mt: 2, ml: 2 }}>
     <ProjectCardHeader>CDF</ProjectCardHeader>
-    <ProjectCardStat name="Energy" color="error" value={50} />
-    <ProjectCardStat name="Credibility" color="success" value={35} />
-    <ProjectCardStat name="Quality of life" color="error" value={15} />
-    <ProjectCardStat name="Skills" color="success" value={85} />
-    <ProjectCardStat name="Social capital" color="success" value={80} />
+    <ProjectCardStat name="Energy" value={-50} />
+    <ProjectCardStat name="Credibility" value={35} />
+    <ProjectCardStat name="Quality of life" value={-15} />
+    <ProjectCardStat name="Skills" value={85} />
+    <ProjectCardStat name="Social capital" value={80} />
   </ProjectCard>
 );
 
