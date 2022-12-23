@@ -4,11 +4,13 @@ import { ReportCard } from "./ReportCard";
 import createTheme from "@mui/material/styles/createTheme";
 import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import CssBaseline from "@mui/material/CssBaseline/CssBaseline";
+import { useDarkMode } from "storybook-dark-mode";
 
 const StoryWithTheme = (Story) => {
+  const mode = useDarkMode() ? "dark" : "light";
   const darkTheme = createTheme({
     palette: {
-      mode: "dark",
+      mode,
     },
   });
   return (
