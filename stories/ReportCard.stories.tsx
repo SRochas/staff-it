@@ -1,7 +1,23 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-
 import { ReportCard } from "./ReportCard";
+import createTheme from "@mui/material/styles/createTheme";
+import ThemeProvider from "@mui/material/styles/ThemeProvider";
+import CssBaseline from "@mui/material/CssBaseline/CssBaseline";
+
+const StoryWithTheme = (Story) => {
+  const darkTheme = createTheme({
+    palette: {
+      mode: "dark",
+    },
+  });
+  return (
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
+      <Story />
+    </ThemeProvider>
+  );
+};
 
 export default {
   title: "Example/ReportCard",
@@ -10,6 +26,7 @@ export default {
     // More on Story layout: https://storybook.js.org/docs/react/configure/story-layout
     layout: "fullscreen",
   },
+  decorators: [StoryWithTheme],
 } as ComponentMeta<typeof ReportCard>;
 
 const Template: ComponentStory<typeof ReportCard> = (args) => (
