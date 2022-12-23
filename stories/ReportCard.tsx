@@ -1,6 +1,8 @@
 import React from "react";
 import LinearProgress from "@mui/material/LinearProgress";
 import Card from "@mui/material/Card";
+import CardHeader from "@mui/material/CardHeader";
+import { CardContent, Typography } from "@mui/material";
 
 interface ReportCardProps {}
 
@@ -9,8 +11,12 @@ interface ReportCardProps {}
  */
 export const ReportCard = ({}: ReportCardProps) => {
   return (
-    <Card variant="outlined" sx={{ width: 200 }}>
-      <h1>The new project</h1>
+    <Card variant="outlined" sx={{ maxWidth: 345 }}>
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          CDF
+        </Typography>
+      </CardContent>
       <LinearProgress variant="determinate" value={25} color="error" />;
     </Card>
   );
