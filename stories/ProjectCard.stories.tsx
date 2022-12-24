@@ -1,12 +1,19 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { Meta, Story } from "@storybook/react";
 import ProjectCard from "../components/ProjectCard/ProjectCard";
 import createTheme from "@mui/material/styles/createTheme";
 import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import CssBaseline from "@mui/material/CssBaseline/CssBaseline";
 import { useDarkMode } from "storybook-dark-mode";
-import ProjectCardHeader from "../components/ProjectCard/ProjectCardHeader";
+import ProjectCardHeader, {
+  ProjectCardHeaderProps,
+} from "../components/ProjectCard/ProjectCardHeader";
 import ProjectCardStats from "../components/ProjectCardStats";
+import type { ProjectCardStatsProps } from "../components/ProjectCardStats";
+
+type TemplateProps = {
+  header: ProjectCardHeaderProps["children"];
+} & ProjectCardStatsProps;
 
 const StoryWithTheme = (Story) => {
   const mode = useDarkMode() ? "dark" : "light";
@@ -23,32 +30,41 @@ const StoryWithTheme = (Story) => {
   );
 };
 
+const numberBetweenMinus100And100 = {
+  control: {
+    type: "number",
+    min: -100,
+    max: 100,
+  },
+};
+
 export default {
   title: "Example/ProjectCard",
   component: ProjectCard,
-  parameters: {
-    // More on Story layout: https://storybook.js.org/docs/react/configure/story-layout
-    layout: "fullscreen",
-  },
   decorators: [StoryWithTheme],
-} as ComponentMeta<typeof ProjectCard>;
+  argTypes: {
+    energy: numberBetweenMinus100And100,
+    credibility: numberBetweenMinus100And100,
+    qualityOfLife: numberBetweenMinus100And100,
+    skills: numberBetweenMinus100And100,
+    socialCapital: numberBetweenMinus100And100,
+  },
+} as Meta;
 
-const Template: ComponentStory<typeof ProjectCard> = (args) => (
-  <ProjectCard {...args} sx={{ mt: 2, ml: 2 }}>
-    <ProjectCardHeader>CDF</ProjectCardHeader>
-    <ProjectCardStats
-      energy={-50}
-      credibility={35}
-      qualityOfLife={-15}
-      skills={85}
-      socialCapital={80}
-    />
+const Template: Story<TemplateProps> = ({ header, ...statsProps }) => (
+  <ProjectCard sx={{ mt: 2, ml: 2 }}>
+    <ProjectCardHeader>{header}</ProjectCardHeader>
+    <ProjectCardStats {...statsProps} />
   </ProjectCard>
 );
 
-export const ProjectCardTemplate = Template.bind({});
+export const ProjectCardTemplate: Story<TemplateProps> = Template.bind({});
+
 ProjectCardTemplate.args = {
-  user: {
-    name: "Jane Doe",
-  },
+  header: "Project Name",
+  energy: -50,
+  credibility: 35,
+  qualityOfLife: -15,
+  skills: 85,
+  socialCapital: 80,
 };
