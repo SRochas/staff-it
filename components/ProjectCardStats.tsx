@@ -14,17 +14,11 @@ const ProjectCardStats = ({
 }: ProjectCardStatsProps) => {
   return (
     <>
-      {energy && <ProjectCardStat name="Energy" value={energy} />}
-      {credibility && (
-        <ProjectCardStat name="Credibility" value={credibility} />
-      )}
-      {qualityOfLife && (
-        <ProjectCardStat name="Quality of life" value={qualityOfLife} />
-      )}
-      {skills && <ProjectCardStat name="Skills" value={skills} />}
-      {socialCapital && (
-        <ProjectCardStat name="Social capital" value={socialCapital} />
-      )}
+      <ProjectCardStat name="Energy" value={energy} />
+      <ProjectCardStat name="Credibility" value={credibility} />
+      <ProjectCardStat name="Quality of life" value={qualityOfLife} />
+      <ProjectCardStat name="Skills" value={skills} />
+      <ProjectCardStat name="Social capital" value={socialCapital} />
     </>
   );
 };
