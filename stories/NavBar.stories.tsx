@@ -53,6 +53,7 @@ const Template: Story<TemplateProps> = ({}) => {
       title={currentTitle}
       anchorElNav={anchorElNav}
       onMenuOpen={handleOpenNavMenu}
+      avatarUrl={"https://avatars.githubusercontent.com/u/40780484?v=4"}
     >
       {pages.map((page) => (
         <MenuItem key={page} onClick={handleClickMenuItem(page)}>

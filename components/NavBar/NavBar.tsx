@@ -4,17 +4,18 @@ import AppBar from "@mui/material/AppBar";
 import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 import MenuIcon from "@mui/icons-material/Menu";
 import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
+import DynamicLoginButton from "./DynamicLoginButton";
 
 export type NavBarProps = {
   children?: ReactNode | ReactNode[];
   onMenuClose: (event: MouseEvent<HTMLElement>) => void;
   onMenuOpen: (event: MouseEvent<HTMLElement>) => void;
   title: string;
-  anchorElNav: HTMLElement;
+  anchorElNav?: HTMLElement;
+  avatarUrl?: string;
+  avatarAltText?: string;
 };
 
 const NavBar = ({
@@ -23,6 +24,8 @@ const NavBar = ({
   onMenuClose,
   onMenuOpen,
   anchorElNav,
+  avatarUrl,
+  avatarAltText,
 }: NavBarProps) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -66,9 +69,10 @@ const NavBar = ({
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           {title}
         </Typography>
-        <Button color="inherit" onClick={handleLogin}>
-          {isLoggedIn ? "Log Out" : "Login"}
-        </Button>
+        <DynamicLoginButton
+          avatarUrl={avatarUrl}
+          avatarAltText={avatarAltText}
+        />
       </Toolbar>
     </AppBar>
   );
