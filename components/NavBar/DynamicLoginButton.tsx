@@ -41,28 +41,13 @@ const DynamicLoginButton = ({
           </Avatar>
         );
       }
-      return logoutText;
+      return <>{logoutText}</>;
     }
-    return loginText;
+    return <>{loginText}</>;
   };
   return (
     <Button color="inherit" onClick={handleClick}>
-      {isLoggedIn ? (
-        avatarUrl ? (
-          <Avatar>
-            <Image
-              loader={() => avatarUrl}
-              src={avatarUrl}
-              alt={avatarAltText}
-              layout="fill"
-            />
-          </Avatar>
-        ) : (
-          "Log Out"
-        )
-      ) : (
-        "Login"
-      )}
+      <Content />
     </Button>
   );
 };
