@@ -10,7 +10,12 @@ export type BoardProps = {
 const Board = ({ header, children }: BoardProps) => {
   return (
     <List
-      sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
+      sx={{
+        width: "100%",
+        maxWidth: 360,
+        bgcolor: "background.paper",
+        border: "2px",
+      }}
       component="nav"
       aria-labelledby="nested-list-subheader"
       subheader={

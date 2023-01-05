@@ -42,7 +42,9 @@ const NavBar = ({
           color="inherit"
           aria-label="menu"
           sx={{ mr: 2 }}
-          onClick={onMenuOpen}
+          onClick={(event) => {
+            onMenuOpen(event);
+          }}
         >
           <MenuIcon />
         </IconButton>
