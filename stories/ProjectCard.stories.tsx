@@ -5,10 +5,8 @@ import createTheme from "@mui/material/styles/createTheme";
 import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import CssBaseline from "@mui/material/CssBaseline/CssBaseline";
 import { useDarkMode } from "storybook-dark-mode";
-import ProjectCardHeader from "../components/ProjectCard/Card/CardHeader";
-import ProjectCardStats from "../components/ProjectCard/Card/CardStats";
-import type { CardHeaderProps as ProjectCardHeaderProps } from "../components/ProjectCard/Card/CardHeader";
-import type { CardStatsProps as ProjectCardStatsProps } from "../components/ProjectCard/Card/CardStats";
+import ProjectCardHeader, {type CardHeaderProps as ProjectCardHeaderProps} from "../components/ProjectCard/Card/CardHeader";
+import ProjectCardStats, {type CardStatsProps as ProjectCardStatsProps } from "../components/ProjectCard/Card/CardStats";
 
 type TemplateProps = {
   header: ProjectCardHeaderProps["children"];

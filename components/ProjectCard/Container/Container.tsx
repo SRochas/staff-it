@@ -1,5 +1,10 @@
-import React from "react";
+import React, { type ReactNode } from "react";
+import MuiBox from '@mui/material/Box/Box'
 
-const Container = () => <div>Hello world</div>;
+export type ContainerProps = {
+  children: ReactNode | ReactNode[];
+};
+
+const Container = ({ children }: ContainerProps) => <MuiBox>{children}</MuiBox>;
 
 export default Container;
